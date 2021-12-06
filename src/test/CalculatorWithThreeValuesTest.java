@@ -5,39 +5,38 @@ import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
 
-public class CalculatorTest {
-
+public class CalculatorWithThreeValuesTest {
     private Calculator calculator;
+    private BigDecimal value1;
+    private BigDecimal value2;
+    private BigDecimal value3;
+
 
     @Before
-    public void createCalculator(){
+    public void createCalculatorWithThreeValues(){
         calculator = new Calculator();
-    }
-
-    @Test
-    public void testNewCalculatorHasAnAccumulatorOfZero(){
-        assertEquals(BigDecimal.ZERO, calculator.getAccumulator());
-    }
-
-    @Test
-    public void testSettingAccumulatorValue(){
-        BigDecimal value = new BigDecimal(23);
-        calculator.setAccumulator(value);
-        assertEquals(value, calculator.getAccumulator());
-    }
-    @Test
-    public void testEnteringAndDroppingValues(){
-        BigDecimal value1 = new BigDecimal(12);
-        BigDecimal value2 = new BigDecimal(22);
-        BigDecimal value3 = new BigDecimal(52);
+        value2 = new BigDecimal(22);
+        value3 = new BigDecimal(52);
+        value1 = new BigDecimal(12);
         calculator.setAccumulator(value1);
         calculator.enter();
         calculator.setAccumulator(value2);
         calculator.enter();
         calculator.setAccumulator(value3);
+    }
+    @Test
+    public void testAccumulatorAfterPushingThreeValues(){
         assertEquals(value3, calculator.getAccumulator());
+    }
+    @Test
+    public void testAccumulatorAfterSingleDrop(){
         calculator.drop();
         assertEquals(value2, calculator.getAccumulator());
+    }
+
+    @Test
+    public void testAccumulatorAfterDroppingTwice(){
+        calculator.drop();
         calculator.drop();
         assertEquals(value1, calculator.getAccumulator());
     }
