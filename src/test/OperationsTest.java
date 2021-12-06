@@ -17,14 +17,33 @@ public class OperationsTest {
 
     }
 
+//    @Test
+//    public void testAdd(){
+//        calculator.add();
+//        assertEquals(new BigDecimal(24), calculator.getAccumulator());
+//    }
+
     @Test
-    public void testAdd(){
-        calculator.add();
+    public void testAddExecution(){
+        calculator.execute("+");
         assertEquals(new BigDecimal(24), calculator.getAccumulator());
     }
+//    @Test
+//    public void testSubtract(){
+//        calculator.subtract();
+//        assertEquals(new BigDecimal(16), calculator.getAccumulator());
+//    }
     @Test
-    public void testSubtract(){
-        calculator.subtract();
+    public void testSubtractExecution(){
+        calculator.execute("-");
         assertEquals(new BigDecimal(16), calculator.getAccumulator());
     }
+
+    @Test
+    public void testMultiply(){
+        calculator.execute("*");
+        assertEquals(new BigDecimal(80), calculator.getAccumulator());
+
+    }
+
 }

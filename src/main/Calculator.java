@@ -1,5 +1,4 @@
 import java.math.BigDecimal;
-import java.util.Stack;
 
 public class Calculator {
 
@@ -19,13 +18,16 @@ public class Calculator {
         values.pop();
     }
 
-    public void add() {
-        Operation addOperation = new AddOperation();
-        addOperation.apply(values);
+    public void execute(String op) {
+        Operation operation = null;
+        if ("+".equals(op))
+            operation = new AddOperation();
+        else if ("-".equals(op))
+            operation = new SubtractOperation();
+        else if ("*".equals(op))
+            operation = new MultiplyOperation();
+        operation.apply(values);
+
     }
 
-    public void subtract() {
-        Operation subtractOperation = new SubtractOperation();
-        subtractOperation.apply(values);
-    }
 }
