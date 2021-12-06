@@ -20,9 +20,11 @@ public class Calculator {
     }
 
     public void enter() {
+        values.push(getAccumulator());
 
     }
 
     public void drop() {
+        values.pop();
     }
 }
