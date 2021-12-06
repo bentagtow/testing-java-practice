@@ -18,4 +18,11 @@ public class Calculator {
     public void drop() {
         values.pop();
     }
+
+    public void add() {
+        BigDecimal value1 = values.peek();
+        values.pop();
+        BigDecimal value2 = values.peek();
+        values.replaceTop(value1.add(value2));
+    }
 }
