@@ -22,4 +22,9 @@ public class OperationsTest {
         calculator.add();
         assertEquals(new BigDecimal(24), calculator.getAccumulator());
     }
+    @Test
+    public void testSubtract(){
+        calculator.subtract();
+        assertEquals(new BigDecimal(16), calculator.getAccumulator());
+    }
 }

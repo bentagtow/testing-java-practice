@@ -20,9 +20,12 @@ public class Calculator {
     }
 
     public void add() {
-        BigDecimal value1 = values.peek();
-        values.pop();
-        BigDecimal value2 = values.peek();
-        values.replaceTop(value1.add(value2));
+        Operation addOperation = new AddOperation();
+        addOperation.apply(values);
+    }
+
+    public void subtract() {
+        Operation subtractOperation = new SubtractOperation();
+        subtractOperation.apply(values);
     }
 }
