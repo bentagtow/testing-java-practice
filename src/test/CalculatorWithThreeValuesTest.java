@@ -13,7 +13,7 @@ public class CalculatorWithThreeValuesTest {
 
 
     @Before
-    public void createCalculatorWithThreeValues(){
+    public void createCalculatorWithThreeValues() {
         calculator = new Calculator();
         value2 = new BigDecimal(22);
         value3 = new BigDecimal(52);
@@ -24,18 +24,20 @@ public class CalculatorWithThreeValuesTest {
         calculator.enter();
         calculator.setAccumulator(value3);
     }
+
     @Test
-    public void testAccumulatorAfterPushingThreeValues(){
+    public void testAccumulatorAfterPushingThreeValues() {
         assertEquals(value3, calculator.getAccumulator());
     }
+
     @Test
-    public void testAccumulatorAfterSingleDrop(){
+    public void testAccumulatorAfterSingleDrop() {
         calculator.drop();
         assertEquals(value2, calculator.getAccumulator());
     }
 
     @Test
-    public void testAccumulatorAfterDroppingTwice(){
+    public void testAccumulatorAfterDroppingTwice() {
         calculator.drop();
         calculator.drop();
         assertEquals(value1, calculator.getAccumulator());

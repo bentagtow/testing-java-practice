@@ -3,6 +3,7 @@ import java.util.Stack;
 
 public class OperandStack {
     private Stack<BigDecimal> values = new Stack<>();
+
     public BigDecimal peek() {
         if (values.size() == 0) {
             return BigDecimal.ZERO;
@@ -22,7 +23,7 @@ public class OperandStack {
 
 
     public void pop() {
-        if(values.size() > 0)
+        if (values.size() > 0)
             values.pop();
     }
 }

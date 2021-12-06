@@ -10,22 +10,21 @@ public class NewCalculatorTest {
     private Calculator calculator;
 
     @Before
-    public void createCalculator(){
+    public void createCalculator() {
         calculator = new Calculator();
     }
 
     @Test
-    public void testNewCalculatorHasAnAccumulatorOfZero(){
+    public void testNewCalculatorHasAnAccumulatorOfZero() {
         assertEquals(BigDecimal.ZERO, calculator.getAccumulator());
     }
 
     @Test
-    public void testSettingAccumulatorValue(){
+    public void testSettingAccumulatorValue() {
         BigDecimal value = new BigDecimal(23);
         calculator.setAccumulator(value);
         assertEquals(value, calculator.getAccumulator());
     }
-
 
 
 }

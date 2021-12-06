@@ -12,7 +12,9 @@ public class Calculator {
         values.replaceTop(value);
     }
 
-    public void enter() { values.push(getAccumulator()); }
+    public void enter() {
+        values.push(getAccumulator());
+    }
 
     public void drop() {
         values.pop();

@@ -9,23 +9,24 @@ public class OperandStackTest {
     private OperandStack stack;
 
     @Before
-    public void createStack(){
+    public void createStack() {
         stack = new OperandStack();
     }
+
     @Test
-    public void testOperandStackPeekReturnsZero(){
+    public void testOperandStackPeekReturnsZero() {
         assertEquals(BigDecimal.ZERO, stack.peek());
     }
-    
+
     @Test
-    public void testPushingValueOntoStack(){
+    public void testPushingValueOntoStack() {
         BigDecimal value = new BigDecimal(12);
         stack.push(value);
         assertEquals(value, stack.peek());
     }
 
     @Test
-    public void testReplacingTopOfStack(){
+    public void testReplacingTopOfStack() {
         stack.push(new BigDecimal(22));
         BigDecimal value = new BigDecimal(66);
         stack.replaceTop(value);
@@ -33,22 +34,23 @@ public class OperandStackTest {
     }
 
     @Test
-    public void testReplacingTopWithEmptyStack(){
+    public void testReplacingTopWithEmptyStack() {
         BigDecimal value = new BigDecimal(66);
         stack.replaceTop(value);
         assertEquals(value, stack.peek());
     }
 
     @Test
-    public void testPoppingValueFromStack(){
+    public void testPoppingValueFromStack() {
         BigDecimal value = new BigDecimal(45);
         stack.push(value);
         stack.push(new BigDecimal(55));
         stack.pop();
         assertEquals(value, stack.peek());
     }
+
     @Test
-    public void testPoppingEmptyStack(){
+    public void testPoppingEmptyStack() {
         stack.pop();
         assertEquals(BigDecimal.ZERO, stack.peek());
     }

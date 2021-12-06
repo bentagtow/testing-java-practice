@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public abstract class BinaryOperation implements Operation{
+public abstract class BinaryOperation implements Operation {
     @Override
     public void apply(OperandStack values) {
         BigDecimal value1 = values.peek();
@@ -9,5 +9,6 @@ public abstract class BinaryOperation implements Operation{
         values.replaceTop(calculate(value1, value2));
 
     }
+
     protected abstract BigDecimal calculate(BigDecimal value1, BigDecimal value2);
 }
