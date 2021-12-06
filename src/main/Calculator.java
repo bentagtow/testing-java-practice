@@ -26,6 +26,8 @@ public class Calculator {
             operation = new SubtractOperation();
         else if ("*".equals(op))
             operation = new MultiplyOperation();
+        else if ("/".equals(op))
+            operation = new DivideOperation();
         operation.apply(values);
 
     }

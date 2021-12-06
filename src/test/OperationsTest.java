@@ -40,10 +40,15 @@ public class OperationsTest {
     }
 
     @Test
-    public void testMultiply(){
+    public void testMultiplyExecution(){
         calculator.execute("*");
         assertEquals(new BigDecimal(80), calculator.getAccumulator());
+    }
 
+    @Test
+    public void testDivideExecution(){
+        calculator.execute("/");
+        assertEquals(new BigDecimal(5), calculator.getAccumulator());
     }
 
 }
