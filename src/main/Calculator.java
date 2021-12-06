@@ -1,12 +1,28 @@
 import java.math.BigDecimal;
+import java.util.Stack;
 
 public class Calculator {
 
-    private BigDecimal accumulator = BigDecimal.ZERO;
+    private Stack<BigDecimal> values = new Stack<>();
 
-    public BigDecimal getAccumulator() {return accumulator;}
+    public BigDecimal getAccumulator() {
+        if (values.size() == 0){
+            return BigDecimal.ZERO;
+        }
+        return values.peek();
+    }
 
     public void setAccumulator(BigDecimal value) {
-        accumulator = value;
+        if (values.size() > 0){
+            values.pop();
+        }
+        values.push(value);
+    }
+
+    public void enter() {
+
+    }
+
+    public void drop() {
     }
 }
